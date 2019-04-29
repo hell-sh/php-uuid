@@ -1,0 +1,18 @@
+{
+	"name": "hellsh/uuid",
+	"description": "A wrapper for 128 unique bits.",
+	"keywords": ["uuid"],
+	"homepage": "https://github.com/hell-sh/php-uuid",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"require": {
+		"php": ">=5",
+		"ext-SPL": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	}
+}
