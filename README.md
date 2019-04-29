@@ -1,4 +1,4 @@
-# uuid-php
+# uuid-php [![Build Status](https://travis-ci.org/hell-sh/php-uuid.svg?branch=master)](https://travis-ci.org/hell-sh/php-uuid)
 
 A wrapper for 128 unique bits.
 
