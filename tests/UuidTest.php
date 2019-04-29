@@ -19,6 +19,6 @@ final class UuidTest extends \PHPUnit\Framework\TestCase
 
 	function testGeneratev5()
 	{
-		$this->assertEquals("a36e854defad58cdbd0084259b83901d", $uuid->v5("Hello, world!")->toString());
+		$this->assertEquals("a36e854defad58cdbd0084259b83901d", UUID::v5("Hello, world!")->toString());
 	}
 }
