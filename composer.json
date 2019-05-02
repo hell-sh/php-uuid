@@ -1,5 +1,5 @@
 {
-	"name": "hellsh/uuid",
+	"name": "hell-sh/uuid",
 	"description": "A wrapper for 128 unique bits.",
 	"keywords": ["uuid"],
 	"homepage": "https://github.com/hell-sh/php-uuid",
