@@ -13,6 +13,6 @@
 		"ext-SPL": "*"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "*"
+		"hell-sh/nose": "^1.1"
 	}
 }
