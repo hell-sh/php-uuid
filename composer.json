@@ -10,7 +10,8 @@
 	},
 	"require": {
 		"php": ">=5",
-		"ext-SPL": "*"
+		"ext-SPL": "*",
+		"ext-GMP": "*"
 	},
 	"require-dev": {
 		"hell-sh/nose": "^1.1"

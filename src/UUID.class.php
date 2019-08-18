@@ -89,4 +89,20 @@ class UUID
 	{
 		return $this->toString(true);
 	}
+
+	/**
+	 * Returns a hash code for this UUID.
+	 * @since 1.1
+	 * @return number
+	 */
+	function hashCode()
+	{
+		$hilo = gmp_xor(gmp_import(substr($this->binary, 0, 8)), gmp_import(substr($this->binary, 8)));
+		$hashCode = gmp_xor(gmp_div($hilo, gmp_pow(2, 32)), gmp_mod($hilo, gmp_pow(2, 32)));
+		if(gmp_cmp($hashCode, gmp_pow(2, 31)) >= 0)
+		{
+			$hashCode = gmp_sub($hashCode, gmp_pow(2, 32));
+		}
+		return gmp_intval($hashCode);
+	}
 }
