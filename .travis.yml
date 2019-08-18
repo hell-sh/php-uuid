@@ -9,5 +9,5 @@ cache:
   directories:
     - vendor
 script:
-  - composer install --no-dev
-  - phpunit tests/ --testdox
+  - composer install
+  - vendor/bin/nose
