@@ -13,7 +13,7 @@ class UUID
 	 * @param string $uuid A UUID string or 16-byte binary string.
 	 * @throws InvalidArgumentException When the given string is not a valid UUID.
 	 */
-	public function __construct(string $uuid)
+	function __construct(string $uuid)
 	{
 		if(strlen($uuid) == 16)
 		{
@@ -40,7 +40,7 @@ class UUID
 	 * Generates a UUIDv4.
 	 * @return UUID
 	 */
-	public static function v4()
+	static function v4()
 	{
 		return new UUID(sprintf("%04x%04x%04x%04x%04x%04x%04x%04x", mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff), (mt_rand(0, 0x0fff) | 0x4000), (mt_rand(0, 0x3fff) | 0x8000), mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)));
 	}
@@ -51,7 +51,7 @@ class UUID
 	 * @param UUID|null $namespace Defaults to NULL UUID.
 	 * @return UUID
 	 */
-	public static function v5($str, UUID $namespace = null)
+	static function v5($str, UUID $namespace = null)
 	{
 		if(!$namespace)
 		{
@@ -66,7 +66,7 @@ class UUID
 	 * @param boolean $withDashes
 	 * @return string
 	 */
-	public function toString($withDashes = false)
+	function toString($withDashes = false)
 	{
 		$str = "";
 		for($i = 0; $i < 16; $i++)
@@ -85,7 +85,7 @@ class UUID
 		return $str;
 	}
 
-	public function __toString()
+	function __toString()
 	{
 		return $this->toString(true);
 	}
