@@ -93,7 +93,7 @@ class UUID
 	/**
 	 * Returns a hash code for this UUID.
 	 * @since 1.1
-	 * @return number
+	 * @return int
 	 */
 	function hashCode()
 	{
