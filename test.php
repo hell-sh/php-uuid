@@ -17,9 +17,21 @@ class UuidTest
 		Nose::assertEquals($uuid->toString(true), "e0603b59-2edc-45f7-acc7-b0cccd6656e1");
 	}
 
+	function testGeneratev3()
+	{
+		Nose::assertEquals(UUID::v3("Hello, world!")->toString(), "0ce329138ac43b939d8eedeb18063c73");
+	}
+
 	function testGeneratev5()
 	{
-		Nose::assertEquals(UUID::v5("Hello, world!")->toString(), "a36e854defad58cdbd0084259b83901d");
+		Nose::assertEquals(UUID::v5("Hello, world!")->toString(), "9112042407e0506ca6a4726e89871b72");
+	}
+
+	function testConstantMethods()
+	{
+		Nose::assertEquals(UUID::getNullUuid()->toString(), "00000000000000000000000000000000");
+		Nose::assertEquals(UUID::getDnsNamespace()->toString(), "6ba7b8109dad11d180b400c04fd430c8");
+		Nose::assertEquals(UUID::getUrlNamespace()->toString(), "6ba7b8119dad11d180b400c04fd430c8");
 	}
 
 	function testHashCode()
