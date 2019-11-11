@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "$_htuv",
+  0: "$_ghtuv",
   1: "u",
   2: "h",
   3: "u",
-  4: "_htv",
+  4: "_ghtv",
   5: "$"
 };
 
