@@ -19,7 +19,7 @@ class UuidTest
 
 	function testGeneratev5()
 	{
-		Nose::assertEquals(UUID::v5("Hello, world!")->toString(), "a36e854defad58cdbd0084259b83901d");
+		Nose::assertEquals(UUID::v5("Hello, world!")->toString(), "9112042407e0506ca6a4726e89871b72");
 	}
 
 	function testHashCode()
