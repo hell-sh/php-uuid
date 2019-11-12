@@ -13,7 +13,7 @@ class UUID
 	 * @param string $uuid A UUID string or 16-byte binary string.
 	 * @throws InvalidArgumentException When the given string is not a valid UUID.
 	 */
-	function __construct(string $uuid)
+	function __construct($uuid)
 	{
 		if(strlen($uuid) == 16)
 		{
