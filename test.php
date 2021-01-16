@@ -22,6 +22,11 @@ class UuidTest
 		Nose::assertEquals(UUID::v3("Hello, world!")->toString(), "0ce329138ac43b939d8eedeb18063c73");
 	}
 
+	static function testGenerateName()
+	{
+		Nose::assertEquals(UUID::name("Hello, world!")->toString(), "6cd3556deb0d354b8a060b4c39479839");
+	}
+
 	static function testGeneratev5()
 	{
 		Nose::assertEquals(UUID::v5("Hello, world!")->toString(), "9112042407e0506ca6a4726e89871b72");

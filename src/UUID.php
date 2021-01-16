@@ -83,7 +83,19 @@ class UUID
 		{
 			$namespace = self::getNullUuid();
 		}
-		$hash = md5($namespace->binary.$str);
+		return self::name($namespace->binary.$str);
+	}
+
+	/**
+	 * An implementation of Java's UUID.nameUUIDFromBytes, which is UUIDv3 without a namespace.
+	 *
+	 * @since 1.3
+	 * @param string $str
+	 * @return UUID
+	 */
+	static function name(string $str): UUID
+	{
+		$hash = md5($str);
 		return new UUID(sprintf("%08s%04s%04x%04x%12s", substr($hash, 0, 8), substr($hash, 8, 4), (hexdec(substr($hash, 12, 4)) & 0x0fff) | 0x3000, (hexdec(substr($hash, 16, 4)) & 0x3fff) | 0x8000, substr($hash, 20, 12)));
 	}
 
