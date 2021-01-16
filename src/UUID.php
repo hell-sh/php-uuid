@@ -77,7 +77,7 @@ class UUID
 	 * @param UUID|null $namespace Defaults to NULL UUID.
 	 * @return UUID
 	 */
-	static function v3(string $str, ?UUID $namespace = null): ?UUID
+	static function v3(string $str, ?UUID $namespace = null): UUID
 	{
 		if($namespace === null)
 		{
