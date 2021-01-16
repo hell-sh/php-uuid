@@ -3,38 +3,38 @@ require_once "vendor/autoload.php";
 use hellsh\UUID;
 class UuidTest
 {
-	function testEquality()
+	static function testEquality()
 	{
 		$uuid1 = new UUID("e0603b592edc45f7acc7b0cccd6656e1");
 		$uuid2 = new UUID("e0603b59-2edc-45f7-acc7-b0cccd6656e1");
 		Nose::assert($uuid1 == $uuid2);
 	}
 
-	function testToString()
+	static function testToString()
 	{
 		$uuid = new UUID("e0603b592edc45f7acc7b0cccd6656e1");
 		Nose::assertEquals($uuid->toString(), "e0603b592edc45f7acc7b0cccd6656e1");
 		Nose::assertEquals($uuid->toString(true), "e0603b59-2edc-45f7-acc7-b0cccd6656e1");
 	}
 
-	function testGeneratev3()
+	static function testGeneratev3()
 	{
 		Nose::assertEquals(UUID::v3("Hello, world!")->toString(), "0ce329138ac43b939d8eedeb18063c73");
 	}
 
-	function testGeneratev5()
+	static function testGeneratev5()
 	{
 		Nose::assertEquals(UUID::v5("Hello, world!")->toString(), "9112042407e0506ca6a4726e89871b72");
 	}
 
-	function testConstantMethods()
+	static function testConstantMethods()
 	{
 		Nose::assertEquals(UUID::getNullUuid()->toString(), "00000000000000000000000000000000");
 		Nose::assertEquals(UUID::getDnsNamespace()->toString(), "6ba7b8109dad11d180b400c04fd430c8");
 		Nose::assertEquals(UUID::getUrlNamespace()->toString(), "6ba7b8119dad11d180b400c04fd430c8");
 	}
 
-	function testHashCode()
+	static function testHashCode()
 	{
 		Nose::assertEquals((new UUID("ca18ef03-54bb-4ee9-bdfa-2245dae34e4e"))->hashCode(), -105198111);
 		Nose::assertEquals((new UUID("4441f9e9-0458-4e2b-b00d-9567fbfc5bda"))->hashCode(), 199784831);
